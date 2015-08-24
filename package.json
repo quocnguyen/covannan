@@ -1,0 +1,32 @@
+{
+  "name": "covannan",
+  "version": "1.0.0",
+  "description": "covannan is dead simple constructor injection that know how to load dependencies for you.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -G"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/quocnguyen/covannan.git"
+  },
+  "keywords": [
+    "di",
+    "ioc",
+    "dependency",
+    "injection"
+  ],
+  "author": "quocnguyen@clgt.vn",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/quocnguyen/covannan/issues"
+  },
+  "homepage": "https://github.com/quocnguyen/covannan#readme",
+  "dependencies": {
+    "args-list": "^0.3.3",
+    "lodash.isfunction": "^3.0.6"
+  },
+  "devDependencies": {
+    "mocha": "^2.2.5"
+  }
+}
