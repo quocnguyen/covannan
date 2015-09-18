@@ -26,7 +26,7 @@ covannan.set('auth', require('./lib/auth'));
 /* .lib/user/index.js */
 module.exports = function (auth) {
   // here in our user module, we depend on auth
-  // convannan will inject auth module for us 
+  // convannan will inject auth module for us
   auth.login();
 }
 
@@ -37,12 +37,16 @@ module.exports = function () {
   }
 }
 
+// more sugar for lazy dudes
+convannan.autoload('/lib/**/*.js');
+
 ```
 
 ## Usage
 ```js
 covannan.set(name, value);
 covannan.get(name);
+covannan.autoload(pattern);
 ```
 ## Constructor Injection
 if value is a function, covannan will auto resolve dependencies and passing them to contructor as arguments.
@@ -52,7 +56,18 @@ covannan.set('cal.add', function(a,b) { return a+b });
 covannan.set('a', 1);
 covannan.set('b', 2);
 
-covannan.get('cal.add'); // 3 
+covannan.get('cal.add'); // 3
 ```
+
+# API
+
+## .set(name, value)
+creates a dependency `name`
+
+## .get(name, value)
+and load it back
+
+## .autoload(path)
+autoload all files in `path` as dependencies
 
 # License

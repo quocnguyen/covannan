@@ -26,5 +26,10 @@ describe('covannan', function(){
     assert.throws(function(){
       covannan.get('magic');
     }, Error);
-  })
+  });
+
+  it('should autoload dependency', function(){
+    covannan.autoload('./sample/*.js');
+    assert.equal(covannan.get('bar'), 11);
+  });
 });

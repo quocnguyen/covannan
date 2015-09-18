@@ -24,6 +24,7 @@
   "homepage": "https://github.com/quocnguyen/covannan#readme",
   "dependencies": {
     "args-list": "^0.3.3",
+    "glob": "^5.0.14",
     "lodash.isfunction": "^3.0.6"
   },
   "devDependencies": {

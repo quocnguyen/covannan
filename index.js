@@ -1,5 +1,7 @@
 var argsList = require('args-list');
 var isFunction = require('lodash.isFunction');
+var glob = require('glob');
+var path = require('path');
 
 module.exports = function() {
   var deps = [];
@@ -27,6 +29,22 @@ module.exports = function() {
         return covannan.get(dependency);
       });
       return fn.apply(null, args);
+  }
+
+  covannan.autoload = function(pattern, options) {
+    var files = glob.sync(pattern, {
+      realpath: true,
+      cwd: process.env.NODE_PATH || path.dirname(module.parent.filename)
+    });
+
+    files.forEach(function(file){
+      var name = path.basename(file, path.extname(file));
+      if ( name === 'index') {
+        name = path.dirname(file).split(path.sep).pop();
+      }
+
+      covannan.set(name, require(file));
+    });
   }
 
   return covannan;
