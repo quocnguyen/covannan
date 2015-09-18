@@ -1,6 +1,6 @@
 {
   "name": "covannan",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "covannan is dead simple constructor injection that know how to load dependencies for you.",
   "main": "index.js",
   "scripts": {
