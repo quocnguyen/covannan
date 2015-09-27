@@ -1,5 +1,5 @@
 var argsList = require('args-list');
-var isFunction = require('lodash.isFunction');
+var isFunction = require('lodash.isfunction');
 var glob = require('glob');
 var path = require('path');
 
